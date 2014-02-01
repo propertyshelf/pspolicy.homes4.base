@@ -52,3 +52,8 @@ class TestSetup(unittest.TestCase):
         else:
             self.assertTrue(
                 'plone.app.theming' in qi.listInstallableProfiles())
+
+    def test_plone_mls_listing_installed(self):
+        """Test that plone.mls.listing is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('plone.mls.listing'))

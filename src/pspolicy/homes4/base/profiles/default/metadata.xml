@@ -7,5 +7,6 @@
     <dependency>profile-plone.app.caching:default</dependency>
     <dependency>profile-plone.app.caching:with-caching-proxy</dependency>
     <dependency>profile-plone.app.theming:default</dependency>
+    <dependency>profile-plone.mls.listing:default</dependency>
   </dependencies>
 </metadata>

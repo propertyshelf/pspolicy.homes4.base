@@ -20,6 +20,7 @@ install_requires = [
     'collective.contentleadimage',
     'plone.app.caching',
     'plone.app.theming',
+    'plone.mls.listing',
 ]
 
 
