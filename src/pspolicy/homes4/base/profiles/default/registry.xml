@@ -1,4 +1,34 @@
 <registry>
+  <!-- collective.cover.controlpanel.ICoverSettings. -->
+  <record name="collective.cover.controlpanel.ICoverSettings.available_tiles" interface="collective.cover.controlpanel.ICoverSettings" field="available_tiles">
+    <value>
+      <element>collective.cover.banner</element>
+      <element>collective.cover.basic</element>
+      <element>collective.cover.collection</element>
+      <element>collective.cover.contentbody</element>
+      <element>collective.cover.embed</element>
+      <element>collective.cover.file</element>
+      <element>collective.cover.list</element>
+      <element>collective.cover.richtext</element>
+      <element>collective.cover.pfg</element>
+    </value>
+  </record>
+
+  <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+    <value purge="False">
+      <element>GREENBOX|green-box</element>
+      <element>YELLOWBOX|yellow-box</element>
+      <element>ORANGEBOX|orange-box</element>
+      <element>BLUEBOX|blue-box</element>
+      <element>Move to head|move-head</element>
+      <element>ToolkitSlider|toolkit-slider</element>
+      <element>PURPLEBOX|purple-box</element>
+      <element>Border|tile-edge</element>
+      <element>-Default-|tile-default</element>
+      <element>Center|tile-center</element>
+    </value>
+  </record>
+
   <!-- plone.caching.interfaces.ICacheSettings. -->
   <record name="plone.caching.interfaces.ICacheSettings.enabled" interface="plone.caching.interfaces.ICacheSettings" field="enabled">
     <value purge="False">True</value>

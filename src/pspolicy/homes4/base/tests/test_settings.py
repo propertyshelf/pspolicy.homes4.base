@@ -6,6 +6,7 @@ import unittest2 as unittest
 
 # zope imports
 from Products.CMFCore.utils import getToolByName
+from collective.cover.controlpanel import ICoverSettings
 from plone.app.caching.interfaces import IPloneCacheSettings
 from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.caching.interfaces import ICacheSettings
@@ -33,6 +34,13 @@ class TestSettings(unittest.TestCase):
         """Validate the plone.app.caching settings."""
         settings = self.registry.forInterface(ICacheSettings)
         self.assertTrue(settings.enabled)
+
+    def test_cover_settings(self):
+        """Validate the collective.cover settings."""
+        settings = self.registry.forInterface(ICoverSettings)
+        available_tiles = settings.available_tiles
+        self.assertIn('collective.cover.pfg', available_tiles)
+        self.assertNotIn('collective.cover.carousel', available_tiles)
 
     def test_dc_metadata_exposed(self):
         """Validate the DC Core metadata option is enabled."""
