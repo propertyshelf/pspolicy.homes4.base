@@ -8,6 +8,7 @@
 
   <!-- Include package dependencies. -->
   <!-- ============================= -->
+  <includeDependencies package="." />
   <include file="profiles.zcml" />
 
 </configure>
