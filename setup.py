@@ -13,6 +13,15 @@ long_description = (
     open('CHANGES.rst').read()
     + '\n')
 
+
+install_requires = [
+    'setuptools',
+    'Products.PloneFormGen',
+    'collective.contentleadimage',
+    'plone.app.theming',
+]
+
+
 setup(
     name='pspolicy.homes4.base',
     version=version,
@@ -42,10 +51,7 @@ setup(
     namespace_packages=['pspolicy', 'pspolicy.homes4'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=[
-        'setuptools',
-        # -*- Extra requirements: -*-
-    ],
+    install_requires=install_requires,
     extras_require={
         'test': [
             'plone.app.testing',
