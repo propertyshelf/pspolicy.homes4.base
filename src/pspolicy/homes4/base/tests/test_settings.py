@@ -11,6 +11,7 @@ from plone.app.caching.interfaces import IPloneCacheSettings
 from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.caching.interfaces import ICacheSettings
 from plone.registry.interfaces import IRegistry
+from theming.toolkit.core.interfaces import IToolkitSettings
 from zope.component import getUtility
 
 # local imports
@@ -112,6 +113,12 @@ class TestSettings(unittest.TestCase):
         self.assertIn('plone.mls.listing.listing', p_types)
         self.assertIn('News Item', p_types)
         self.assertIn('Document', p_types)
+
+    def test_theming_toolkit_core_settings(self):
+        """Validate the theming.toolkit.core settings."""
+        settings = self.registry.forInterface(IToolkitSettings)
+        self.assertFalse(settings.show_featuredNavigation)
+        self.assertFalse(settings.show_headerplugin)
 
     def test_tinymce_settings(self):
         """Validate TinyMCE editor settings."""

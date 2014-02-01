@@ -59,4 +59,13 @@
     </value>
   </record>
 
+  <!-- theming.toolkit.core.interfaces.IToolkitSettings. -->
+  <record name="theming.toolkit.core.interfaces.IToolkitSettings.show_featuredNavigation" interface="theming.toolkit.core.interfaces.IToolkitSettings" field="show_featuredNavigation">
+    <value>False</value>
+  </record>
+
+  <record name="theming.toolkit.core.interfaces.IToolkitSettings.show_headerplugin" interface="theming.toolkit.core.interfaces.IToolkitSettings" field="show_headerplugin">
+    <value>False</value>
+  </record>
+
 </registry>
