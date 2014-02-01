@@ -1,0 +1,5 @@
+<registry>
+  <record name="plone.caching.interfaces.ICacheSettings.enabled" interface="plone.caching.interfaces.ICacheSettings" field="enabled">
+    <value purge="False">True</value>
+  </record>
+</registry>
