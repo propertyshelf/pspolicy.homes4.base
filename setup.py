@@ -19,6 +19,7 @@ install_requires = [
     'Products.Carousel',
     'Products.Doormat',
     'Products.PloneFormGen',
+    'Products.RedirectionTool',
     'collective.carousel',
     'collective.contentleadimage',
     'plone.app.caching',
