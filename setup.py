@@ -23,6 +23,7 @@ install_requires = [
     'collective.carousel',
     'collective.contentleadimage',
     'collective.cover',
+    'collective.googleanalytics',
     'plone.app.caching',
     'plone.app.theming',
     'plone.mls.listing',

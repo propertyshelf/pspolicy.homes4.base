@@ -60,6 +60,11 @@ class TestSetup(unittest.TestCase):
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('collective.cover'))
 
+    def test_collective_googleanalytics_installed(self):
+        """Test that collective.googleanalytics is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('collective.googleanalytics'))
+
     def test_plone_app_caching_installed(self):
         """Test that plone.app.caching is installed."""
         qi = self.portal.portal_quickinstaller
