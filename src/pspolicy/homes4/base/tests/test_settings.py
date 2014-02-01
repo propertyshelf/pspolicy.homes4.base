@@ -6,6 +6,7 @@ import unittest2 as unittest
 
 # zope imports
 from Products.CMFCore.utils import getToolByName
+from plone.app.caching.interfaces import IPloneCacheSettings
 from plone.caching.interfaces import ICacheSettings
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
@@ -37,3 +38,21 @@ class TestSettings(unittest.TestCase):
         """Validate the plone.app.caching settings."""
         cacheSettings = self.registry.forInterface(ICacheSettings)
         self.assertTrue(cacheSettings.enabled)
+
+    def test_plone_cache_settings(self):
+        """Validate the plone.app.caching settings."""
+        ploneCacheSettings = self.registry.forInterface(IPloneCacheSettings)
+        self.assertTrue(ploneCacheSettings.enableCompression)
+        mapping = ploneCacheSettings.templateRulesetMapping
+        self.assertIn('leadImage', mapping.keys())
+        self.assertIn('leadImage_preview', mapping.keys())
+        self.assertIn('leadImage_thumb', mapping.keys())
+        self.assertEquals('plone.content.file', mapping.get('leadImage'))
+        self.assertEquals(
+            'plone.content.file',
+            mapping.get('leadImage_preview'),
+        )
+        self.assertEquals(
+            'plone.content.file',
+            mapping.get('leadImage_thumb'),
+        )

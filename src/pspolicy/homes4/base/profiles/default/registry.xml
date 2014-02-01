@@ -1,5 +1,18 @@
 <registry>
+  <!-- plone.caching.interfaces.ICacheSettings. -->
   <record name="plone.caching.interfaces.ICacheSettings.enabled" interface="plone.caching.interfaces.ICacheSettings" field="enabled">
     <value purge="False">True</value>
+  </record>
+
+  <!-- plone.app.caching.interfaces.IPloneCacheSettings. -->
+  <record name="plone.app.caching.interfaces.IPloneCacheSettings.enableCompression" interface="plone.app.caching.interfaces.IPloneCacheSettings" field="enableCompression">
+    <value purge="False">True</value>
+  </record>
+  <record name="plone.app.caching.interfaces.IPloneCacheSettings.templateRulesetMapping" interface="plone.app.caching.interfaces.IPloneCacheSettings" field="templateRulesetMapping">
+    <value purge="False">
+      <element key="leadImage">plone.content.file</element>
+      <element key="leadImage_preview">plone.content.file</element>
+      <element key="leadImage_thumb">plone.content.file</element>
+    </value>
   </record>
 </registry>
