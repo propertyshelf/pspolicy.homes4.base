@@ -27,6 +27,7 @@ install_requires = [
     'plone.app.caching',
     'plone.app.theming',
     'plone.mls.listing',
+    'theming.toolkit.core',
     'z3c.unconfigure',
 ]
 

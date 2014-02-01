@@ -87,3 +87,8 @@ class TestSetup(unittest.TestCase):
         """Test that plone.mls.listing is installed."""
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('plone.mls.listing'))
+
+    def test_theming_toolkit_core_installed(self):
+        """Test that theming.toolkit.core is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('theming.toolkit.core'))
