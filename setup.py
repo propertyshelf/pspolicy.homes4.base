@@ -17,6 +17,7 @@ long_description = (
 install_requires = [
     'setuptools',
     'Products.PloneFormGen',
+    'collective.carousel',
     'collective.contentleadimage',
     'plone.app.caching',
     'plone.app.theming',
