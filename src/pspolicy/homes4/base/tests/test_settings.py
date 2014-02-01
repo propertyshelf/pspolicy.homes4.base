@@ -76,3 +76,15 @@ class TestSettings(unittest.TestCase):
         self.assertTrue(settings.enabled)
         self.assertTrue(settings.virtualHosting)
         self.assertEquals(('http://localhost:9000',), settings.cachingProxies)
+
+    def test_tinymce_settings(self):
+        """Validate TinyMCE editor settings."""
+        utility = getToolByName(self.portal, 'portal_tinymce')
+        self.assertTrue(utility.link_using_uids)
+        self.assertTrue(utility.toolbar_visualchars)
+        self.assertTrue(utility.toolbar_media)
+        self.assertTrue(utility.toolbar_removeformat)
+        self.assertTrue(utility.toolbar_pasteword)
+        self.assertTrue(utility.toolbar_pastetext)
+        self.assertTrue(utility.toolbar_visualaid)
+        self.assertTrue(utility.toolbar_cleanup)
