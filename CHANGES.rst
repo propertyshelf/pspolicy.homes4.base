@@ -1,7 +1,8 @@
 Changelog
 =========
 
-0.1 (unreleased)
+0.1 (2014-02-01)
 ----------------
 
-- Initial release.
+- Install required products.
+- Customise settings for Plone site and add-ons.
