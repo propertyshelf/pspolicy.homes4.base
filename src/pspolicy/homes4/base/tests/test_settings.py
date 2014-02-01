@@ -36,14 +36,14 @@ class TestSettings(unittest.TestCase):
 
     def test_cache_settings(self):
         """Validate the plone.app.caching settings."""
-        cacheSettings = self.registry.forInterface(ICacheSettings)
-        self.assertTrue(cacheSettings.enabled)
+        settings = self.registry.forInterface(ICacheSettings)
+        self.assertTrue(settings.enabled)
 
     def test_plone_cache_settings(self):
         """Validate the plone.app.caching settings."""
-        ploneCacheSettings = self.registry.forInterface(IPloneCacheSettings)
-        self.assertTrue(ploneCacheSettings.enableCompression)
-        mapping = ploneCacheSettings.templateRulesetMapping
+        settings = self.registry.forInterface(IPloneCacheSettings)
+        self.assertTrue(settings.enableCompression)
+        mapping = settings.templateRulesetMapping
         self.assertIn('leadImage', mapping.keys())
         self.assertIn('leadImage_preview', mapping.keys())
         self.assertIn('leadImage_thumb', mapping.keys())
