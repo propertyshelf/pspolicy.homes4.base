@@ -7,6 +7,7 @@ import unittest2 as unittest
 # zope imports
 from Products.CMFCore.utils import getToolByName
 from plone.app.caching.interfaces import IPloneCacheSettings
+from plone.cachepurging.interfaces import ICachePurgingSettings
 from plone.caching.interfaces import ICacheSettings
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
@@ -56,3 +57,10 @@ class TestSettings(unittest.TestCase):
             'plone.content.file',
             mapping.get('leadImage_thumb'),
         )
+
+    def test_plone_cache_purge_settings(self):
+        """Validate the plone.cachepurging settings."""
+        settings = self.registry.forInterface(ICachePurgingSettings)
+        self.assertTrue(settings.enabled)
+        self.assertTrue(settings.virtualHosting)
+        self.assertEquals(('http://localhost:9000',), settings.cachingProxies)

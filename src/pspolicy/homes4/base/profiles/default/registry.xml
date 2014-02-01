@@ -15,4 +15,18 @@
       <element key="leadImage_thumb">plone.content.file</element>
     </value>
   </record>
+
+  <!-- plone.cachepurging.interfaces.ICachePurgingSettings. -->
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.enabled" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="enabled">
+    <value purge="False">True</value>
+  </record>
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="virtualHosting">
+    <value purge="False">True</value>
+  </record>
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="cachingProxies">
+    <value purge="False">
+      <element>http://localhost:9000</element>
+    </value>
+  </record>
+
 </registry>
