@@ -1,20 +1,36 @@
-from plone.app.testing import PloneWithPackageLayer
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import FunctionalTesting
+# -*- coding: utf-8 -*-
+"""Test Layer for pspolicy.homes4.base."""
 
-import pspolicy.homes4.base
+# zope imports
+from plone.app.testing import (
+    IntegrationTesting,
+    PloneSandboxLayer,
+    PLONE_FIXTURE,
+    applyProfile,
+)
+from zope.configuration import xmlconfig
 
 
-PSPOLICY_HOMES4_BASE = PloneWithPackageLayer(
-    zcml_package=pspolicy.homes4.base,
-    zcml_filename='testing.zcml',
-    gs_profile_id='pspolicy.homes4.base:testing',
-    name="PSPOLICY_HOMES4_BASE")
+class PSPolicyHomes4Base(PloneSandboxLayer):
+    """Custom Test Layer for pspolicy.homes4.base."""
+    defaultBases = (PLONE_FIXTURE, )
 
-PSPOLICY_HOMES4_BASE_INTEGRATION = IntegrationTesting(
-    bases=(PSPOLICY_HOMES4_BASE, ),
-    name="PSPOLICY_HOMES4_BASE_INTEGRATION")
+    def setUpZope(self, app, configurationContext):
+        """Set up Zope for testing."""
+        # Load ZCML
+        import pspolicy.homes4.base
+        xmlconfig.file(
+            'configure.zcml', pspolicy.homes4.base,
+            context=configurationContext,
+        )
 
-PSPOLICY_HOMES4_BASE_FUNCTIONAL = FunctionalTesting(
-    bases=(PSPOLICY_HOMES4_BASE, ),
-    name="PSPOLICY_HOMES4_BASE_FUNCTIONAL")
+    def setUpPloneSite(self, portal):
+        """Set up a Plone site for testing."""
+        applyProfile(portal, 'pspolicy.homes4.base:default')
+
+
+PSPOLICY_HOMES4_BASE_FIXTURE = PSPolicyHomes4Base()
+PSPOLICY_HOMES4_BASE_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(PSPOLICY_HOMES4_BASE_FIXTURE, ),
+    name='PSPolicyHomes4Base:Integration',
+)
