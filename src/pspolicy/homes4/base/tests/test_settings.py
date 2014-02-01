@@ -28,7 +28,7 @@ class TestSettings(unittest.TestCase):
         self.registry = getUtility(IRegistry)
 
     def test_mailhost_host(self):
-        """Test that the correct SMTP Server is set."""
+        """Validate the SMTP Server settings."""
         mailhost = getToolByName(self.portal, 'MailHost')
         self.assertEquals('localhost', mailhost.smtp_host)
         self.assertEquals(25, mailhost.smtp_port)
