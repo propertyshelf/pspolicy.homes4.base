@@ -29,28 +29,22 @@ class TestSettings(unittest.TestCase):
         self.portal_workflow = getToolByName(self.portal, 'portal_workflow')
         self.registry = getUtility(IRegistry)
 
+    def test_cache_settings(self):
+        """Validate the plone.app.caching settings."""
+        settings = self.registry.forInterface(ICacheSettings)
+        self.assertTrue(settings.enabled)
+
     def test_dc_metadata_exposed(self):
         """Validate the DC Core metadata option is enabled."""
         sp = self.p_properties.get('site_properties')
         self.failUnless(sp)
         self.assertTrue(getattr(sp, "exposeDCMetaTags"))
 
-    def test_sitemap_enabled(self):
-        """Validate that sitemap.xml.gz option is enabled."""
-        sp = self.p_properties.get('site_properties')
-        self.failUnless(sp)
-        self.assertTrue(getattr(sp, "enable_sitemap"))
-
     def test_mailhost_host(self):
         """Validate the SMTP Server settings."""
         mailhost = getToolByName(self.portal, 'MailHost')
         self.assertEquals('localhost', mailhost.smtp_host)
         self.assertEquals(25, mailhost.smtp_port)
-
-    def test_cache_settings(self):
-        """Validate the plone.app.caching settings."""
-        settings = self.registry.forInterface(ICacheSettings)
-        self.assertTrue(settings.enabled)
 
     def test_plone_cache_settings(self):
         """Validate the plone.app.caching settings."""
@@ -76,6 +70,16 @@ class TestSettings(unittest.TestCase):
         self.assertTrue(settings.enabled)
         self.assertTrue(settings.virtualHosting)
         self.assertEquals(('http://localhost:9000',), settings.cachingProxies)
+
+    def test_site_title(self):
+        """Validate the site title."""
+        self.assertEquals("Homes4", self.portal.getProperty("title"))
+
+    def test_sitemap_enabled(self):
+        """Validate that sitemap.xml.gz option is enabled."""
+        sp = self.p_properties.get('site_properties')
+        self.failUnless(sp)
+        self.assertTrue(getattr(sp, "enable_sitemap"))
 
     def test_tinymce_settings(self):
         """Validate TinyMCE editor settings."""
