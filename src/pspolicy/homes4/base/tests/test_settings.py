@@ -81,6 +81,30 @@ class TestSettings(unittest.TestCase):
         self.failUnless(sp)
         self.assertTrue(getattr(sp, "enable_sitemap"))
 
+    def test_social_like_settings(self):
+        """Validate sc.social.like settings."""
+        sp = self.p_properties.get('sc_social_likes_properties')
+        self.failUnless(sp)
+        self.assertEquals('propertyshelf', getattr(sp, 'twittvia'))
+
+        plugins = getattr(sp, 'plugins_enabled', [])
+        self.assertIn('Facebook', plugins)
+        self.assertIn('Google+', plugins)
+        self.assertIn('LinkedIn', plugins)
+        self.assertIn('Pinterest', plugins)
+        self.assertIn('Twitter', plugins)
+
+        p_types = getattr(sp, 'enabled_portal_types', [])
+        self.assertIn('Event', p_types)
+        self.assertIn('File', p_types)
+        self.assertIn('Folder', p_types)
+        self.assertIn('FormFolder', p_types)
+        self.assertIn('Image', p_types)
+        self.assertIn('Link', p_types)
+        self.assertIn('plone.mls.listing.listing', p_types)
+        self.assertIn('News Item', p_types)
+        self.assertIn('Document', p_types)
+
     def test_tinymce_settings(self):
         """Validate TinyMCE editor settings."""
         utility = getToolByName(self.portal, 'portal_tinymce')
