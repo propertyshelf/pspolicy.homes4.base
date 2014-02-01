@@ -15,5 +15,6 @@
     <dependency>profile-plone.app.theming:default</dependency>
     <dependency>profile-plone.mls.listing:default</dependency>
     <dependency>profile-theming.toolkit.core:default</dependency>
+    <dependency>profile-theming.toolkit.viewlets:default</dependency>
   </dependencies>
 </metadata>

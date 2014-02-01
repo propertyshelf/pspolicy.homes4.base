@@ -92,3 +92,8 @@ class TestSetup(unittest.TestCase):
         """Test that theming.toolkit.core is installed."""
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('theming.toolkit.core'))
+
+    def test_theming_toolkit_viewlets_installed(self):
+        """Test that theming.toolkit.viewlets is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('theming.toolkit.viewlets'))
