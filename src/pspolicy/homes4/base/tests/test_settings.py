@@ -29,6 +29,18 @@ class TestSettings(unittest.TestCase):
         self.portal_workflow = getToolByName(self.portal, 'portal_workflow')
         self.registry = getUtility(IRegistry)
 
+    def test_dc_metadata_exposed(self):
+        """Validate the DC Core metadata option is enabled."""
+        sp = self.p_properties.get('site_properties')
+        self.failUnless(sp)
+        self.assertTrue(getattr(sp, "exposeDCMetaTags"))
+
+    def test_sitemap_enabled(self):
+        """Validate that sitemap.xml.gz option is enabled."""
+        sp = self.p_properties.get('site_properties')
+        self.failUnless(sp)
+        self.assertTrue(getattr(sp, "enable_sitemap"))
+
     def test_mailhost_host(self):
         """Validate the SMTP Server settings."""
         mailhost = getToolByName(self.portal, 'MailHost')
