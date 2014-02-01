@@ -1,5 +1,4 @@
-.. contents::
+pspolicy.homes4.base
+====================
 
-Introduction
-============
-
+Plone Policy Add-On for the Homes4 sites.

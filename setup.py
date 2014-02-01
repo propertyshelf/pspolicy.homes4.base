@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains the tool of pspolicy.homes4.base
-"""
-import os
+"""Setup for pspolicy.homes4.base package."""
+
 from setuptools import setup, find_packages
 
 version = '0.1dev'
@@ -15,13 +13,14 @@ long_description = (
     open('CHANGES.txt').read()
     + '\n')
 
-setup(name='pspolicy.homes4.base',
-      version=version,
-      description="Plone Policy Add-On for the Homes4 sites.",
-      long_description=long_description,
-      # Get more strings from
-      # http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      classifiers=[
+setup(
+    name='pspolicy.homes4.base',
+    version=version,
+    description="Plone Policy Add-On for the Homes4 sites.",
+    long_description=long_description,
+    # Get more strings from
+    # http://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
         "Environment :: Web Environment",
         "Operating System :: OS Independent",
         "Framework :: Zope2",
@@ -32,25 +31,29 @@ setup(name='pspolicy.homes4.base',
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Topic :: Software Development :: Libraries :: Python Modules",
-      ],
-      keywords='plone policy',
-      author='Propertyshelf, Inc.',
-      author_email='development@propertyshelf.com',
-      url='https://github.com/propertyshelf/pspolicy.homes4.base',
-      license='gpl',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['pspolicy', 'pspolicy.homes4'],
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-      ],
-      extras_require={'test': ['plone.app.testing']},
-      entry_points="""
-      # -*- Entry points: -*- 
-      [z3c.autoinclude.plugin]
-      target = plone
-      """
-      )
+    ],
+    keywords='plone policy',
+    author='Propertyshelf, Inc.',
+    author_email='development@propertyshelf.com',
+    url='https://github.com/propertyshelf/pspolicy.homes4.base',
+    license='gpl',
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    namespace_packages=['pspolicy', 'pspolicy.homes4'],
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'setuptools',
+        # -*- Extra requirements: -*-
+    ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+        ],
+    },
+    entry_points="""
+    # -*- Entry points: -*-
+    [z3c.autoinclude.plugin]
+    target = plone
+    """
+)
