@@ -24,6 +24,7 @@ install_requires = [
     'collective.contentleadimage',
     'collective.cover',
     'collective.googleanalytics',
+    'collective.quickupload',
     'plone.app.caching',
     'plone.app.theming',
     'plone.mls.listing',
