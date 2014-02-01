@@ -25,6 +25,11 @@ class TestSetup(unittest.TestCase):
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('pspolicy.homes4.base'))
 
+    def test_products_carousel_installed(self):
+        """Test that Products.Carousel is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('Carousel'))
+
     def test_products_ploneformgen_installed(self):
         """Test that Products.PloneFormGen is installed."""
         qi = self.portal.portal_quickinstaller

@@ -16,6 +16,7 @@ long_description = (
 
 install_requires = [
     'setuptools',
+    'Products.Carousel',
     'Products.PloneFormGen',
     'collective.carousel',
     'collective.contentleadimage',
