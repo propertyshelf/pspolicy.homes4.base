@@ -1,0 +1,19 @@
+language: python
+python:
+  - 2.7
+env:
+  - PLONE_VERSION=4.2
+  - PLONE_VERSION=4.3
+install:
+  - mkdir -p buildout-cache/eggs
+  - mkdir -p buildout-cache/downloads
+  - python bootstrap.py -c travis.cfg
+  - bin/buildout -N -t 5 -c travis.cfg
+branches:
+  only:
+    - master
+script: bin/test
+notifications:
+  irc: irc.freenode.org#propertyshelf
+  hipchat:
+    secure: "WEaBcEpyvPcfwS7+aYKYeCsD9Q0oGTaph0ajo46FN6xIrP8RshZG1EquDoWXYaRx+HYavcSpZ2h5yQHU1zeoTEXHqHWoMXPc3MgYbloSe+8HHnEM99kZlkUZGbSLwho3dq8ujWPck6ddBoa3fq1D1elWjOa7zCiN57N1TMAa4yw="
