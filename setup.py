@@ -18,6 +18,7 @@ install_requires = [
     'setuptools',
     'Products.PloneFormGen',
     'collective.contentleadimage',
+    'plone.app.caching',
     'plone.app.theming',
 ]
 
