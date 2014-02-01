@@ -22,6 +22,7 @@ install_requires = [
     'Products.RedirectionTool',
     'collective.carousel',
     'collective.contentleadimage',
+    'collective.cover',
     'plone.app.caching',
     'plone.app.theming',
     'plone.mls.listing',
