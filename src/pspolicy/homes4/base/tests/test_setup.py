@@ -30,6 +30,11 @@ class TestSetup(unittest.TestCase):
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('Carousel'))
 
+    def test_products_doormat_installed(self):
+        """Test that Products.Doormat is installed."""
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('Doormat'))
+
     def test_products_ploneformgen_installed(self):
         """Test that Products.PloneFormGen is installed."""
         qi = self.portal.portal_quickinstaller

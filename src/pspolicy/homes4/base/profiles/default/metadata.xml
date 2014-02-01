@@ -3,6 +3,7 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-Products.Carousel:default</dependency>
+    <dependency>profile-Products.Doormat:default</dependency>
     <dependency>profile-Products.PloneFormGen:default</dependency>
     <dependency>profile-collective.carousel:default</dependency>
     <dependency>profile-collective.contentleadimage:default</dependency>
