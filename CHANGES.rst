@@ -1,10 +1,10 @@
 Changelog
 =========
 
-0.2dev (unreleased)
--------------------
+0.2 (2014-02-02)
+----------------
 
-- No changes yet.
+- Install theming.toolkit.views.
 
 
 0.1 (2014-02-01)
