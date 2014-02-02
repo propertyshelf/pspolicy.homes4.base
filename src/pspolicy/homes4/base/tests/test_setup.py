@@ -107,3 +107,9 @@ class TestSetup(unittest.TestCase):
         """Test that theming.toolkit.viewlets is installed."""
         qi = self.portal.portal_quickinstaller
         self.assertTrue(qi.isProductInstalled('theming.toolkit.viewlets'))
+
+    def test_theming_toolkit_views_installed(self):
+        """Test that theming.toolkit.views is installed."""
+        import ipdb; ipdb.set_trace()
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('theming.toolkit.views'))

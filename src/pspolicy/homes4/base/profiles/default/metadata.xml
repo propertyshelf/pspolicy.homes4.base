@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>1000</version>
+  <version>1001</version>
   <dependencies>
     <dependency>profile-Products.Carousel:default</dependency>
     <dependency>profile-Products.Doormat:default</dependency>
@@ -18,5 +18,6 @@
     <dependency>profile-sc.social.like:default</dependency>
     <dependency>profile-theming.toolkit.core:default</dependency>
     <dependency>profile-theming.toolkit.viewlets:default</dependency>
+    <dependency>profile-theming.toolkit.views:default</dependency>
   </dependencies>
 </metadata>

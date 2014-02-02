@@ -31,6 +31,7 @@ install_requires = [
     'sc.social.like',
     'theming.toolkit.core',
     'theming.toolkit.viewlets',
+    'theming.toolkit.views',
     'z3c.unconfigure',
 ]
 
