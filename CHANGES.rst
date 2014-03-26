@@ -4,12 +4,11 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- No changes yet.
+- deactivate carousel.js from collective.carousel
 
 
 0.2 (2014-02-02)
 ----------------
-
 - Install theming.toolkit.views.
 
 

@@ -18,3 +18,12 @@ def migrate_to_1001(context):
     site = getUtility(IPloneSiteRoot)
     qi = getToolByName(site, 'portal_quickinstaller')
     qi.installProduct('theming.toolkit.views')
+
+def migrate_to_1002(context):
+    """Migrate from 1001 to 1002.
+
+    * Update jsregistry
+    """
+    site = getUtility(IPloneSiteRoot)
+    setup = getToolByName(site, 'portal_setup')
+    setup.runImportStepFromProfile(PROFILE_ID, 'jsregistry')
