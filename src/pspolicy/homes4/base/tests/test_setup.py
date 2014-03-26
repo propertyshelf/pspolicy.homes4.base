@@ -52,15 +52,12 @@ class TestSetup(unittest.TestCase):
         self.assertTrue(qi.isProductInstalled('collective.carousel'))
 
     def test_collective_carousel_js_deactivated(self):
-        """Test that carousel.js is deactivated via GS: jsregistry.xml """
-        self.jstool = getToolByName(self.portal, 'portal_javascripts')
-        installedScriptIds = self.jstool.getResourceIds()
-        self.assertTrue('carousel.js' in installedScriptIds)
-
-        js_dict = self.jstool.getResourcesDict()
-        carousel_js = js_dict['carousel.js']
+        """Test that carousel.js is deactivated via."""
+        jsregistry = getToolByName(self.portal, 'portal_javascripts')
+        installed_script_ids = jsregistry.getResourceIds()
+        self.assertIn('carousel.js', installed_script_ids)
+        carousel_js = jsregistry.getResource('carousel.js')
         self.assertFalse(carousel_js.getEnabled())
-
 
     def test_collective_contentleadimage_installed(self):
         """Test that collective.contentleadimage is installed."""

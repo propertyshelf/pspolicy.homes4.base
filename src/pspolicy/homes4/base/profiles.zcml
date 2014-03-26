@@ -25,15 +25,14 @@
       profile="pspolicy.homes4.base:default"
       />
 
-    <genericsetup:upgradeStep
+  <genericsetup:upgradeStep
       title="Upgrade pspolicy.homes4.base"
-      description="Update javascript registry"
+      description="Update javascript registry."
       source="1001"
       destination="1002"
       handler=".migration.migrate_to_1002"
       sortkey="1"
       profile="pspolicy.homes4.base:default"
       />
-
 
 </configure>

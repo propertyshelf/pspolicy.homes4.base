@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
- <javascript id="carousel.js" enabled="False" />
+  <javascript
+      enabled="False"
+      id="carousel.js"
+      />
 </object>

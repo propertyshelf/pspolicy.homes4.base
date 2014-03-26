@@ -4,7 +4,7 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- deactivate carousel.js from collective.carousel
+- Deactivate carousel.js from collective.carousel.
 
 
 0.2 (2014-02-02)
